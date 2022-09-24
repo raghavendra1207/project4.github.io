@@ -75,25 +75,23 @@ const todoList = () => {
     // ..
     // ..
     // return OUTPUT_STRING
-    let overdue1=overdue();
+    
     let dueToday1=dueToday();
     let dueLater1=dueLater();
     
     
-    if(JSON.stringify(list)==JSON.stringify(overdue1)){
+    if(JSON.stringify(list)==JSON.stringify(overdue())){
       let result="";
-        for(let i=0;i<overdue1.length;i++)
+        for(let i=0;i<overdue().length;i++)
         {
-          
+          let overdue1=overdue();
             if(overdue1[i].completed==true){
-                
-                result=result+"[x] "+overdue1[i].title+" "+overdue1[i].dueDate;
-                
+                result=result+ "[x] "+overdue1[i].title+" "+overdue1[i].dueDate;
             }
             else{
-                result=result+ "[] "+overdue1[i].title+" "+overdue1[i].dueDate;
+               result=result+ "[] "+overdue1[i].title+" "+overdue1[i].dueDate;
             }
-            if(i!=dueLater1.length){
+            if(i<overdue1.length-1){
               result=result+"\n";
             }
         }
@@ -109,7 +107,7 @@ const todoList = () => {
             else{
                 result=result+"[] "+dueToday1[i].title;
             }
-            if(i!=dueLater1.length){
+            if(i<dueLater1.length-1){
               result=result+"\n";
             }
         }
@@ -126,7 +124,7 @@ const todoList = () => {
             else{
                result=result+ "[] "+dueLater1[i].title+" "+dueLater1[i].dueDate;
             }
-            if(i!=dueLater1.length){
+            if(i<dueLater1.length-1){
               result=result+"\n";
             }
         }
@@ -166,20 +164,20 @@ todos.add({ title: 'Pay electric bill', dueDate: tomorrow, completed: false })
 
 console.log("My Todo-list\n\n")
 
-console.log("Overdue")
-var overdues = todos.overdue()
-var formattedOverdues = todos.toDisplayableList(overdues)
-console.log(formattedOverdues)
-console.log()
+console.log("Overdue");
+var overdues = todos.overdue();
+var formattedOverdues = todos.toDisplayableList(overdues);
+console.log(formattedOverdues);
+console.log("\n\n");
 
 console.log("Due Today")
 let itemsDueToday = todos.dueToday()
 let formattedItemsDueToday = todos.toDisplayableList(itemsDueToday)
 console.log(formattedItemsDueToday)
-console.log()
+console.log("\n\n")
 
 console.log("Due Later")
 let itemsDueLater = todos.dueLater()
 let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
 console.log(formattedItemsDueLater)
-console.log()
+console.log("\n\n")
