@@ -14,7 +14,7 @@ const todoList = () => {
     let duedate1=all[i].dueDate;
     let duedate2=duedate1.slice(8,10);
     let today1=today.slice(8,10);
-    a112=[]
+  
     if(duedate2<today1){
         all1.push(all[i]);
     }
@@ -56,7 +56,7 @@ const todoList = () => {
     let duedate1=all[i].dueDate;
     let duedate2=duedate1.slice(8,10);
     let today1=today.slice(8,10);
-    a112=[]
+
     if(duedate2>today1){
       all1.push(all[i]);
     }
@@ -170,16 +170,16 @@ console.log("Overdue")
 var overdues = todos.overdue()
 var formattedOverdues = todos.toDisplayableList(overdues)
 console.log(formattedOverdues)
-console.log("\n\n")
+console.log()
 
 console.log("Due Today")
 let itemsDueToday = todos.dueToday()
 let formattedItemsDueToday = todos.toDisplayableList(itemsDueToday)
 console.log(formattedItemsDueToday)
-console.log("\n\n")
+console.log()
 
 console.log("Due Later")
 let itemsDueLater = todos.dueLater()
 let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
 console.log(formattedItemsDueLater)
-console.log("\n\n")
+console.log()
