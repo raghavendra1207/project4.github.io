@@ -89,7 +89,7 @@ const todoList = () => {
                 result=result+ "[x] "+overdue1[i].title+" "+overdue1[i].dueDate;
             }
             else{
-               result=result+ "[] "+overdue1[i].title+" "+overdue1[i].dueDate;
+               result=result+ "[ ] "+overdue1[i].title+" "+overdue1[i].dueDate;
             }
             if(i<overdue1.length-1){
               result=result+"\n";
@@ -105,7 +105,7 @@ const todoList = () => {
                 result=result+"[x] "+dueToday1[i].title;
             }
             else{
-                result=result+"[] "+dueToday1[i].title;
+                result=result+"[ ] "+dueToday1[i].title;
             }
             if(i<dueLater1.length-1){
               result=result+"\n";
@@ -122,7 +122,7 @@ const todoList = () => {
                 result=result+ "[x] "+dueLater1[i].title+" "+dueLater1[i].dueDate;
             }
             else{
-               result=result+ "[] "+dueLater1[i].title+" "+dueLater1[i].dueDate;
+               result=result+ "[ ] "+dueLater1[i].title+" "+dueLater1[i].dueDate;
             }
             if(i<dueLater1.length-1){
               result=result+"\n";
